@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.welflex.com/notes" targetNamespace="http://www.welflex.com/notes"
+	elementFormDefault="qualified">
+	<xs:element name="note">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="content" type="xs:string" minOccurs="1" maxOccurs="1" nillable="false"></xs:element>
+				<xs:element name="userId" type="xs:string"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</schema>
