@@ -27,7 +27,7 @@ public class NotesClientImpl implements NotesClient, Closeable {
   public NotesClientImpl(RestTemplate restTemplate, DiscoveryClient discoveryClient,
                          long refreshInterval, TimeUnit refreshIntervalTimeUnit) {
     this.restTemplate = restTemplate;
-    this.result = new AtomicReference<List<InstanceInfo>>(new ArrayList<InstanceInfo>());
+    this.result = new AtomicReference<List<InstanceInfo>>(new ArrayList<>());
     this.subscription = new EurekaInterestManager(discoveryClient).newInterest()
             .forApplication("Notes").withRefreshInterval(refreshInterval, refreshIntervalTimeUnit)
             .asObservable()

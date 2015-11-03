@@ -13,6 +13,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.IntegrationTest;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
@@ -20,15 +21,17 @@ import javax.inject.Inject;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This integration test exercises Service Client to Service communication
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = {Application.class, NotesClientConfig.class})
-@WebAppConfiguration
-@IntegrationTest({"server.port=0",
-        "eureka.instance.leaseRenewalIntervalInSeconds=10",
+@WebIntegrationTest(value = {"eureka.instance.leaseRenewalIntervalInSeconds=10", // Lease Interval
         "eureka.client.instanceInfoReplicationIntervalSeconds=1",
         "eureka.client.initialInstanceInfoReplicationIntervalSeconds=1",
         "eureka.client.registryFetchIntervalSeconds=1",
-        "eureka.client.serviceUrl.defaultZone=http://localhost:9000/eureka/v2/"})
+        "eureka.client.serviceUrl.defaultZone=http://localhost:9000/eureka/v2/"},
+        randomPort =  true)
 public class NotesIntegrationTest {
   private static final Logger LOGGER = Logger.getLogger(NotesIntegrationTest.class);
 
@@ -36,7 +39,7 @@ public class NotesIntegrationTest {
   private NotesClient notesClient;
 
   @Value("${ocelliRefreshIntervalSeconds}")
-  private Long ocelliRefreshIntervalSeconds;
+  private Long ocelliRefreshIntervalSeconds; // Ocelli refresh interval
 
 
   @After
@@ -63,6 +66,7 @@ public class NotesIntegrationTest {
     while (!Thread.currentThread().isInterrupted()) {
       LOGGER.info("Checking where Discovery Client is reporting Notes Service as having registered. Count :" + (count++));
       com.netflix.discovery.shared.Application notesApplications = discoveryClient.getApplication("Notes");
+
       if (notesApplications != null && notesApplications.getInstances().size() > 0) {
         LOGGER.info("Notes Service has been registered with Eureka");
         return;

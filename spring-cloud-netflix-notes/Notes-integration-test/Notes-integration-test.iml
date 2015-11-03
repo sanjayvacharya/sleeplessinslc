@@ -118,6 +118,7 @@
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-core:1.1.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.plugin:spring-plugin-metadata:1.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.hateoas:spring-hateoas:0.16.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.2.2" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework.boot:spring-boot-starter-test:1.2.4.RELEASE" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.mockito:mockito-core:1.10.19" level="project" />
