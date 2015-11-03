@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: Notes
+
+server.port: 9090
+
+eureka:
+  client:
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/v2/
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
