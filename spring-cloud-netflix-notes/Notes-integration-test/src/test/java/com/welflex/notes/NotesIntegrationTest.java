@@ -39,7 +39,6 @@ public class NotesIntegrationTest {
   @Value("${ocelliRefreshIntervalSeconds}")
   private Long ocelliRefreshIntervalSeconds; // Ocelli refresh interval
 
-
   @After
   public void shutdown() {
     discoveryClient.shutdown();
