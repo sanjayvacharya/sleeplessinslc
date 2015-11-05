@@ -10,8 +10,6 @@
   <artifactId>spring-cloud-eureka-server</artifactId>
   <packaging>jar</packaging>
 
-
-
   <dependencies>
 
     <dependency>
