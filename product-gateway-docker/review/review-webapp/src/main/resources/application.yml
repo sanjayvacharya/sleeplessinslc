@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: reviews
+
+server.port: 9093
+
+eureka:
+  client:
+    initialInstanceInfoReplicationIntervalSeconds : 5
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/
+  instance:
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}

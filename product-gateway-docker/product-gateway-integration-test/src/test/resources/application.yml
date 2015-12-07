@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: integration
+
+server.port: -1
+
+eureka:
+  client:
+    registerWithEureka: false
+    serviceUrl:
+          defaultZone: http://localhost:8761/eureka/  
