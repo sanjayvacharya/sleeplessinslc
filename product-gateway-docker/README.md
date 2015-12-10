@@ -1,2 +1,2 @@
 # sleeplessinslc
-Demo code from http://sleeplessinslc.blogspot.com. All code is for demonstration purposes only
+An example of performing a JUnit maven integration test with Spring Cloud Eureka based Microservices with Docker
