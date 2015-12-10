@@ -1,2 +1,2 @@
 # sleeplessinslc
-Demo code from http://sleeplessinslc.blogspot.com. All code is for demonstration purposes only
+A project that demonstrates integration testing with maven and docker with more than one service
