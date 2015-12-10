@@ -1,4 +1,4 @@
-package com.overstock.product.dto;
+package com.welflex.product.dto;
 
 import org.pojomatic.Pojomatic;
 import org.pojomatic.annotations.AutoProperty;

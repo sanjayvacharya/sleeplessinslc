@@ -9,7 +9,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 
 import rx.schedulers.Schedulers;
 
-import com.overstock.product.dto.Product;
+import com.welflex.product.dto.Product;
 import com.welflex.product.service.ProductService;
 
 @RestController

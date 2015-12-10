@@ -1,4 +1,4 @@
-package com.overstock.inventory.dto;
+package com.welflex.inventory.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

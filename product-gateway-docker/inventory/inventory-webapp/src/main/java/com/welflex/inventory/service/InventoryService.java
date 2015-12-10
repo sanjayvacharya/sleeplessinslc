@@ -1,6 +1,6 @@
-package com.overstock.inventory.service;
+package com.welflex.inventory.service;
 
-import com.overstock.inventory.model.ProductInventory;
+import com.welflex.inventory.model.ProductInventory;
 
 public interface InventoryService {
   public ProductInventory getInventory(Long productId);

@@ -11,16 +11,16 @@ import rx.functions.Func2;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-import com.overstock.inventory.dto.ProductInventory;
-import com.overstock.price.dto.ProductPrice;
-import com.overstock.product.dto.BaseProduct;
-import com.overstock.product.dto.BaseProductOption;
-import com.overstock.product.dto.Product;
-import com.overstock.product.dto.ProductOption;
+import com.welflex.inventory.dto.ProductInventory;
+import com.welflex.price.dto.ProductPrice;
 import com.welflex.product.client.BaseProductClient;
 import com.welflex.product.client.InventoryClient;
 import com.welflex.product.client.PriceClient;
 import com.welflex.product.client.ReviewsClient;
+import com.welflex.product.dto.BaseProduct;
+import com.welflex.product.dto.BaseProductOption;
+import com.welflex.product.dto.Product;
+import com.welflex.product.dto.ProductOption;
 import com.welflex.review.dto.Reviews;
 
 @Service

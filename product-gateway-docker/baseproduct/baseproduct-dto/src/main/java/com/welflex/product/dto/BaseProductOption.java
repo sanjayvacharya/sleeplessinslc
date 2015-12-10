@@ -1,4 +1,4 @@
-package com.overstock.product.dto;
+package com.welflex.product.dto;
 
 import javax.xml.bind.annotation.XmlRootElement;
 

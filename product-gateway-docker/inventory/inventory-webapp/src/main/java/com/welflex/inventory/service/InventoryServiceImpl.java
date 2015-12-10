@@ -1,11 +1,11 @@
-package com.overstock.inventory.service;
+package com.welflex.inventory.service;
 
 import java.util.Map;
 
 import org.springframework.stereotype.Service;
 
 import com.google.common.collect.Maps;
-import com.overstock.inventory.model.ProductInventory;
+import com.welflex.inventory.model.ProductInventory;
 
 @Service
 public class InventoryServiceImpl implements InventoryService {

@@ -1,4 +1,4 @@
-package com.overstock.inventory.rest;
+package com.welflex.inventory.rest;
 
 import javax.inject.Inject;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.overstock.inventory.dto.ProductInventory;
-import com.overstock.inventory.service.InventoryService;
+import com.welflex.inventory.dto.ProductInventory;
+import com.welflex.inventory.service.InventoryService;
 
 @RestController
 public class InventoryResource {
@@ -24,7 +24,7 @@ public class InventoryResource {
   @RequestMapping(value = "/productInventory/{productId}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
   @ResponseBody
   public ProductInventory get(@PathVariable("productId") Long productId) {
-    com.overstock.inventory.model.ProductInventory inventory = inventoryService.getInventory(productId);
+    com.welflex.inventory.model.ProductInventory inventory = inventoryService.getInventory(productId);
 
     return new ProductInventory(productId, inventory.getCount());
   }

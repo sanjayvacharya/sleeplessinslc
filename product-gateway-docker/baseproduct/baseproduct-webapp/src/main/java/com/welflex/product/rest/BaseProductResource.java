@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.common.collect.Lists;
-import com.overstock.product.dto.BaseProduct;
-import com.overstock.product.dto.BaseProductOption;
+import com.welflex.product.dto.BaseProduct;
+import com.welflex.product.dto.BaseProductOption;
 import com.welflex.product.service.ProductService;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.overstock.price.dto;
+package com.welflex.price.dto;
 
 
 public class ProductPrice {

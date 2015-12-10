@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.overstock.inventory.dto.ProductInventory;
+import com.welflex.inventory.dto.ProductInventory;
 
 @FeignClient("inventory")
 public interface InventoryClient {

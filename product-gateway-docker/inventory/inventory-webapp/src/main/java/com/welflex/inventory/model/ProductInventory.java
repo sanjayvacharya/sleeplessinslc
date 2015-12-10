@@ -1,4 +1,4 @@
-package com.overstock.inventory.model;
+package com.welflex.inventory.model;
 
 
 public class ProductInventory {  

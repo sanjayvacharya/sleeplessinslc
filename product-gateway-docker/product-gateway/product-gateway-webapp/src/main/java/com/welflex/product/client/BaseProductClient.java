@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.overstock.product.dto.BaseProduct;
+import com.welflex.product.dto.BaseProduct;
 
 @FeignClient("baseproduct")
 public interface BaseProductClient {
