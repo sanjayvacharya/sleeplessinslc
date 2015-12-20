@@ -1,0 +1,133 @@
+[INFO] Scanning for projects...
+[INFO] ------------------------------------------------------------------------
+[INFO] Building Integration Test
+[INFO]    task-segment: [install]
+[INFO] ------------------------------------------------------------------------
+[INFO] [resources:resources]
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] skip non existing resourceDirectory /home/sacharya/mavenlab/SpringJersey/integration-test/src/main/resources
+Downloading: http://maven.overstock.com/repo/com/sun/xml/bind/jaxb-impl/2.1.10/jaxb-impl-2.1.10.pom
+Downloading: http://download.java.net/maven/2//com/sun/xml/bind/jaxb-impl/2.1.10/jaxb-impl-2.1.10.pom
+Downloading: http://repo1.maven.org/maven-spring/com/sun/xml/bind/jaxb-impl/2.1.10/jaxb-impl-2.1.10.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [compiler:compile]
+[INFO] Nothing to compile - all classes are up to date
+[INFO] [resources:testResources]
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Copying 1 resource
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [compiler:testCompile]
+[INFO] Nothing to compile - all classes are up to date
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [compiler:testCompile {execution: default}]
+[INFO] Nothing to compile - all classes are up to date
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [surefire:test]
+[INFO] Surefire report directory: /home/sacharya/mavenlab/SpringJersey/integration-test/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+There are no tests to run.
+
+Results :
+
+Tests run: 0, Failures: 0, Errors: 0, Skipped: 0
+
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [jar:jar]
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [cargo:start {execution: start-container}]
+[INFO] [beddedLocalContainer] Jetty 6.x Embedded starting...
+[INFO] [beddedLocalContainer] Jetty 6.x Embedded started on port [8080]
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[WARNING] POM for 'org.codehaus.jackson:jackson-lgpl:pom:0.9.4:compile' is invalid. It will be ignored for artifact resolution. Reason: Parse error reading POM. Reason: TEXT must be immediately followed by END_TAG and not START_TAG (position: START_TAG seen ...<!-- Contact information -->\n\n  <url>... @16:8)  for project org.codehaus.jackson:jackson-lgpl at /home/sacharya/.m2/repository/org/codehaus/jackson/jackson-lgpl/0.9.4/jackson-lgpl-0.9.4.pom
+[INFO] [surefire:test {execution: integration-tests}]
+[INFO] Surefire report directory: /home/sacharya/mavenlab/SpringJersey/integration-test/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.welflex.order.IntegrationTest
+22:33:08 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/products
+22:33:08 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/products] is :null
+22:33:08 DEBUG - com.welflex.client.ProductClientImpl.getProducts(62) | Fetching Product List from Service...
+22:33:08 DEBUG - com.welflex.order.rest.resource.ProductsResource.getProducts(59) | Enter getProducts()
+22:33:08 DEBUG - com.welflex.client.CacheManager.cache(14) | Caching Object with key [/IntegrationTest/products]
+22:33:08 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/products
+22:33:08 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/products] is :com.welflex.client.CacheEntry@1bf3d87
+22:33:08 DEBUG - com.welflex.client.ProductClientImpl.getProducts(49) | Product Entry in cache is not null...checking cache till date
+22:33:08 DEBUG - com.welflex.client.ProductClientImpl.getProducts(54) | Product List is not stale..using cached value
+Sleeping for 5 seconds so that product list expires...
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/products
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/products] is :com.welflex.client.CacheEntry@1bf3d87
+22:33:13 DEBUG - com.welflex.client.ProductClientImpl.getProducts(49) | Product Entry in cache is not null...checking cache till date
+22:33:13 DEBUG - com.welflex.client.ProductClientImpl.getProducts(57) | Product List is stale..will request server for new Product List..
+22:33:13 DEBUG - com.welflex.client.ProductClientImpl.getProducts(62) | Fetching Product List from Service...
+22:33:13 DEBUG - com.welflex.order.rest.resource.ProductsResource.getProducts(59) | Enter getProducts()
+22:33:13 DEBUG - com.welflex.client.CacheManager.cache(14) | Caching Object with key [/IntegrationTest/products]
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/products
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/products] is :com.welflex.client.CacheEntry@c9d92c
+22:33:13 DEBUG - com.welflex.client.ProductClientImpl.getProducts(49) | Product Entry in cache is not null...checking cache till date
+22:33:13 DEBUG - com.welflex.client.ProductClientImpl.getProducts(54) | Product List is not stale..using cached value
+Product Id:663123
+Product Id:2313
+Storing the order...
+Reading in order after creation...
+Retrieving the order...
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/orders/3443274629940897628
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/orders/3443274629940897628] is :null
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(68) | Order Resource Retrieving order:3443274629940897628
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(73) | Checking if there an Etag and whether there is a change in the order...
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(83) | Returning full Order to the Client
+22:33:13 DEBUG - com.welflex.client.OrderClientImpl.getOrder(68) | Obtained full Order from Service...Caching it..
+22:33:13 DEBUG - com.welflex.client.CacheManager.cache(14) | Caching Object with key [/IntegrationTest/orders/3443274629940897628]
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/orders/3443274629940897628
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/orders/3443274629940897628] is :com.welflex.client.CacheEntry@5d9084
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(68) | Order Resource Retrieving order:3443274629940897628
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(73) | Checking if there an Etag and whether there is a change in the order...
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(79) | Order has not changed..returning unmodified response code
+22:33:13 DEBUG - com.welflex.client.OrderClientImpl.getOrder(64) | Order has not been modified..returning Cached Order...
+Updating the order...
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.updateOrder(106) | Enter Update Order, Id=3443274629940897628
+Retrieving the order..should not obtained cached copy...
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/orders/3443274629940897628
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/orders/3443274629940897628] is :com.welflex.client.CacheEntry@5d9084
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(68) | Order Resource Retrieving order:3443274629940897628
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(73) | Checking if there an Etag and whether there is a change in the order...
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(83) | Returning full Order to the Client
+22:33:13 DEBUG - com.welflex.client.OrderClientImpl.getOrder(68) | Obtained full Order from Service...Caching it..
+22:33:13 DEBUG - com.welflex.client.CacheManager.cache(14) | Caching Object with key [/IntegrationTest/orders/3443274629940897628]
+Deleting the order..
+Client Deleted the order...
+Obtaining order after deletion..
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(19) | Getting Object from Cache for Key:/IntegrationTest/orders/3443274629940897628
+22:33:13 DEBUG - com.welflex.client.CacheManager.get(21) | Object in Cache for Key [/IntegrationTest/orders/3443274629940897628] is :null
+22:33:13 DEBUG - com.welflex.order.rest.resource.OrderResource.getOrder(68) | Order Resource Retrieving order:3443274629940897628
+22:33:13 DEBUG - com.welflex.order.rest.provider.OrderNotFoundProvider.toResponse(17) | Enter toResponse() of OrderNotProvider..
+22:33:13 DEBUG - com.welflex.client.OrderClientImpl.getOrder(75) | Order not found on server...removing from cache
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.254 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] [cargo:stop {execution: stop-container}]
+[INFO] [beddedLocalContainer] Jetty 6.x Embedded is stopping...
+[INFO] [beddedLocalContainer] Jetty 6.x Embedded is stopped
+[INFO] [install:install]
+[INFO] Installing /home/sacharya/mavenlab/SpringJersey/integration-test/target/SpringTest-integration-test-1.0-SNAPSHOT.jar to /home/sacharya/.m2/repository/com/welflex/example/SpringTest-integration-test/1.0-SNAPSHOT/SpringTest-integration-test-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESSFUL
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 19 seconds
+[INFO] Finished at: Mon Mar 02 22:33:16 MST 2009
+[INFO] Final Memory: 15M/27M
+[INFO] ------------------------------------------------------------------------

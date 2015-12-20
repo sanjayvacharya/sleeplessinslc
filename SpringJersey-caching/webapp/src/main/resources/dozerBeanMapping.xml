@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mappings PUBLIC "-//DOZER//DTD MAPPINGS//EN"
+   "http://dozer.sourceforge.net/dtd/dozerbeanmapping.dtd">
+   
+<mappings>
+	<mapping>
+		<class-a>com.welflex.model.Order</class-a>
+		<class-b>com.welflex.order.dto.OrderDto</class-b>
+		<field>
+		      <a>lineItems</a>
+		      <b>lineItems</b>
+		      <a-hint>com.welflex.model.LineItem</a-hint>
+		      <b-hint>com.welflex.order.dto.LineItemDto</b-hint>
+		</field>
+	</mapping>
+	
+    <mapping>
+        <class-a>com.welflex.model.LineItem</class-a>
+        <class-b>com.welflex.order.dto.LineItemDto</class-b>
+        <field>
+            <a>id</a>
+            <b>lineItemId</b>
+        </field>
+        <field>
+            <a>quantity</a>
+            <b>quantity</b>
+        </field>
+        <field>
+            <a>product.id</a>
+            <b>itemId</b>
+        </field>
+        <field>
+            <a>product.name</a>
+            <b>itemName</b>
+         </field>
+     </mapping>
+     
+     <mapping>
+        <class-a>com.welflex.model.Product</class-a>
+        <class-b>com.welflex.order.dto.ProductDto</class-b>
+        <field>
+            <a>id</a>
+            <b>productId</b>
+         </field>   
+       </mapping> 
+</mappings>
