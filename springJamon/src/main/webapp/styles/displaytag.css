@@ -1,0 +1,76 @@
+div.exportlinks {
+    margin: -5px 0 10px 5px;
+    padding: 2px 4px 2px 0;
+    width: 100%;
+}
+
+div.exportlinks span {
+    background-repeat: no-repeat;
+}
+
+span.export {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 4px 1px 0;
+}
+
+span.pagebanner {
+    display: block;
+    margin: 10px 0 10px 0;
+    padding: 2px 4px 2px 0;
+}
+
+span.pagelinks {
+    display: block;
+    font-size: .95em;
+    margin-bottom: 5px;
+    margin-top: -32px;
+    padding: 2px 0 2px 0;
+    text-align: right;
+    width: 100%;
+}
+
+th.sorted a, th.sortable a {
+    background-position: right;
+    display: block;
+}
+
+.table th.order1 a {
+    background-image: url(../images/arrow_down.png) !important;
+}
+
+.table th.order2 a {
+    background-image: url(../images/arrow_up.png) !important;
+}
+
+.table th.sorted {
+    background-color: #ffd;
+    color: #000000;
+}
+
+.table th.sorted a, .table th.sortable a {
+    background-position: right;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.table tr.even {
+    background: #eee;
+    border-top: 1px solid #c0c0c0;
+    color: #000000;
+}
+
+.table tr.odd {
+    background: #fff;
+    border-top: 1px solid #c0c0c0;
+    color: #000000;
+}
+
+/* highlight .table row onmouseover */
+.table tr.over, .table tr:hover {
+    border-bottom: 1px solid #C0C0C0;
+    border-top: 1px solid #C0C0C0;
+    color: #000000;
+    cursor: pointer;
+    background: #ffd;
+}

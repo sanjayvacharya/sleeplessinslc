@@ -1,0 +1,40 @@
+<%extends AbstractView>
+
+<%import>
+com.welflex.model.User;
+com.welflex.web.controller.Views;
+
+org.springframework.validation.BindingResult;
+org.springframework.validation.ObjectError;
+</%import>
+<%args>
+User user;
+BindingResult bindingResult;
+</%args>
+ 
+ <%if bindingResult != null && bindingResult.hasErrors() %>     
+    <div class="error">
+      <%for ObjectError s : bindingResult.getAllErrors() %>
+	     <% s.getDefaultMessage() %><br/>
+	  </%for>	  
+    </div>
+</%if>
+	
+<form action="<% Views.LOGIN_VIEW %>" method="POST">
+<center>
+  <table>
+    <tr>
+	  <td>UserName:</td>
+	  <td><input type="text" id="userName" name="<% User.USER_NAME_PROPERTY %>" value="<% user.getUserName() %>"/>
+    </tr>
+    <tr>
+	  <td>Password:</td>
+	  <td><input type="password" id="password" name="<% User.PASSWORD_PROPERTY %>" value="<% user.getPassword() %>"/>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+	  <td><input type="submit" name="Login" value="Login"/>
+    </tr>
+   </table>
+</center>
+</form>

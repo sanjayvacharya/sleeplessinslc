@@ -1,0 +1,249 @@
+/* A CSS Framework by Mike Stenhouse of Content with Style */
+
+/* TYPOGRAPHY */
+	body {
+		text-align: left;
+		font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+		font-size: 76%;
+        line-height: 1em;
+		color: #333;
+	}
+	div {
+		font-size: 1em;
+	}
+	img {
+		border: 0;
+	}
+	
+/* LINKS */
+	a,
+	a:link
+	a:active {
+		color: blue;
+		text-decoration: underline;
+	}
+	a:visited {
+		color: purple;
+		background-color: transparent;
+	}
+	a:hover {
+        color: white;
+        background-color: black;
+		text-decoration: none;
+	}
+/* END LINKS */
+	
+/* HEADINGS */
+	h1 {
+		font-size: 2em;
+		line-height: 1.5em;
+		margin: 0 0 0.5em 0;
+		padding: 0;
+        color: black;
+	}
+	h2 {
+		font-size: 1.5em;
+        line-height: 1.5em;
+		margin: 0 0 0.5em 0;
+		padding: 0;
+        color: black;
+	}
+	h3 {
+		font-size: 1.3em;
+		line-height: 1.3em;
+		margin: 0 0 0.5em 0;
+		padding:0;
+        color: black;
+	}
+	h4 {
+		font-size: 1.2em;
+		line-height: 1.3em;
+		margin: 0 0 0.25em 0;
+		padding: 0;
+        color: black;
+	}
+	h5 {
+		font-size: 1.1em;
+		line-height: 1.3em;
+		margin: 0 0 0.25em 0;
+		padding: 0;
+        color: black;
+	}
+	h6 {
+		font-size: 1em;
+		line-height: 1.3em;
+		margin: 0 0 0.25em 0;
+		padding: 0;
+        color: black;
+	}
+/* END HEADINGS */
+
+/* TEXT */
+	p {
+		font-size: 1em;
+		margin: 0 0 1.5em 0;
+		padding: 0;
+		line-height:1.4em;
+	}
+	blockquote {
+		border-left:10px solid #ddd;
+		margin-left:10px;
+	}
+	pre {
+		font-family: monospace;
+		font-size: 1.0em;
+	}
+	strong, b {
+		font-weight: bold;
+	}
+	em, i {
+		font-style:italic;
+	}
+    code {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 1em;
+        white-space: pre;
+    }
+/* END TEXT */
+	
+/* LISTS */
+    ul.glassList {
+        list-style: url(../../images/aquadot.jpg) disc outside;
+        vertical-align: top;
+        line-height: 1.5em;
+    }
+    ul {
+        line-height:1.4em;
+		margin: 0 0 1.5em 0;
+		padding: 0;
+	}
+	ul li {
+		margin: 0 0 0.25em 30px;
+		padding: 0;
+	}
+	ol {
+		font-size: 1.0em;
+		line-height: 1.4em;
+		margin: 0 0 1.5em 0;
+		padding: 0;
+	}
+	ol li {
+		font-size: 1.0em;
+		margin: 0 0 0.25em 30px;
+		padding: 0;
+	}
+	dl {
+		margin: 0 0 1.5em 0;
+		padding: 0;
+		line-height: 1.4em;
+	}
+	dl dt {
+		font-weight: bold;
+		margin: 0.25em 0 0.25em 0;
+		padding: 0;
+	}
+	dl dd {
+		margin: 0 0 0 30px;
+		padding: 0;
+	}
+/* END LISTS */
+	
+	
+/* TABLE */
+	table {
+        font-size: 1em;
+		margin: 0 0 1.5em 0;
+        padding: 0;
+	}
+	table caption {
+		font-weight: bold;
+		margin: 0 0 0 0;
+		padding: 0 0 1.5em 0;
+	}
+	th {
+		font-weight: bold;
+		text-align: left;
+	}
+	td {
+		font-size: 1em;
+	}
+
+/*********************************
+           Project: CSS Table Galery
+           Title: Like Adwords
+           Author: Cleiton Francisco
+           URL: http://www.cleiton.net/
+           Country: Brazil
+           Update: 2005-12-18
+         *******************************/
+
+            .table {
+                border-collapse: collapse;
+                border: 2px #87B95B solid;
+                color: #000;
+                background: #fff;
+                width: 100%;
+            }
+                .table caption {
+                    padding: 0 0.6em 0.8em;
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    text-align: left;
+                    color: #000;
+                    background: transparent;
+                }
+                .table td, .table th {
+                    border: 1px solid #e0e0e0;
+                    padding: 0.5em;
+                }
+                .table thead th, .table th {
+                    border: 1px solid #e0e0e0;
+                    text-align: left;
+                    font-size: 1em;
+                    font-weight: bold;
+                    background: #C9FF94;
+                 }
+                .table th a {
+                    background: transparent;
+                    color: #008000;
+                }
+                .table tfoot th, tfoot td {
+                    border: 1px solid #e0e0e0;
+                    text-align: left;
+                    font-size: 1em;
+                    background: #e8e8cf;
+                }
+                .table tfoot th {
+                    font-weight: bold;
+                }
+                .table tbody td a {
+                    background: transparent;
+                    text-decoration: underline;
+                }
+                .table tbody td a:hover {
+                    background: transparent;
+                    text-decoration: underline;
+                }
+                .table tbody td {
+                    text-align: left;
+                }
+                .table tfoot td {
+                    border: 1px solid #996;
+                }
+                /* Fixes for Tapestry (doesn't use thead/tbody) */
+                #tableView .table th { padding: 0 !important }
+                .table th table.tableHeaderTable td { border: 0 }
+                .table .tableHeaderTable td a { text-decoration: none }
+                .table th table.tableHeaderTable { width: 100%; height: 100%; margin: 0 !important }
+    /* END TABLE */
+	
+    hr {
+		display: none;
+	}
+	div.hr {
+		height: 1px;
+		margin: 1.5em 10px;
+		border-bottom: 1px dotted black;
+	}
+	
+/* END TYPOGRAPHY */	

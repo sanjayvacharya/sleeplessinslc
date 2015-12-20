@@ -1,0 +1,4 @@
+<%extends AbstractView>
+<br/>
+<h2>Welcome to Spring-Jamon Integration</h2>
+<br/>
