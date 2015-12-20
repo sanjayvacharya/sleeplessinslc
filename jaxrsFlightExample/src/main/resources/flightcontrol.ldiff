@@ -1,0 +1,81 @@
+# Welflex Flight Schema 
+# userpassword for all persons is "pass"
+#
+version: 1
+
+dn: o=welflex
+objectClass: organization
+objectClass: extensibleObject
+objectClass: top
+o: welflex
+
+dn: ou=users,o=welflex
+objectClass: extensibleObject
+objectClass: organizationalUnit
+objectClass: top
+ou: welflex
+
+dn: ou=groups,o=welflex
+objectClass: extensibleObject
+objectClass: organizationalUnit
+objectClass: top
+ou: groups
+
+dn: cn=User,ou=groups,o=welflex
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: User
+uniqueMember: cn=Sanjay Admin,ou=users,o=welflex
+uniqueMember: cn=Sanjay Agent,ou=users,o=welflex
+uniqueMember: cn=Sanjay User,ou=users,o=welflex
+
+dn: cn=Admin,ou=groups,o=welflex
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Admin
+uniqueMember: cn=Sanjay Admin,ou=users,o=welflex
+
+dn: cn=Agent,ou=groups,o=welflex
+objectClass: groupOfUniqueNames
+objectClass: top
+cn: Agent
+uniqueMember: cn=Sanjay Agent,ou=users,o=welflex
+
+dn: cn=Sanjay Admin,ou=users,o=welflex
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+objectclass: top
+cn: Sanjay Admin
+description: Sanjay Acharya
+givenname: Sanjay
+sn: Acharya
+uid: sadmin
+mail: sadmin@welflex.com
+userpassword:: cGFzcw==
+
+dn: cn=Sanjay Agent,ou=users,o=welflex
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+objectclass: top
+cn: Sanjay Agent
+description: Sanjay Agent
+givenname: Sanjay
+sn: Agent
+uid: sagent
+mail: sagent@welflex.com
+userpassword:: cGFzcw==
+
+dn: cn=Sanjay User,ou=users,o=welflex
+objectclass: person
+objectclass: organizationalPerson
+objectclass: inetOrgPerson
+objectclass: top
+cn: Sanjay User
+description: Sanjay User
+givenname: Sanjay
+sn: User
+uid: suser
+mail: suser@welflex.com
+userpassword:: cGFzcw==

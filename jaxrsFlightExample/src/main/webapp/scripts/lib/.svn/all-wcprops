@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/appfuse~svn/!svn/ver/3593/trunk/web/common/src/main/webapp/scripts/lib
+END
+bootstrap.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/appfuse~svn/!svn/ver/3593/trunk/web/common/src/main/webapp/scripts/lib/bootstrap.js
+END
+bootstrap.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/appfuse~svn/!svn/ver/3593/trunk/web/common/src/main/webapp/scripts/lib/bootstrap.min.js
+END
+jquery-1.7.1.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/appfuse~svn/!svn/ver/3589/trunk/web/common/src/main/webapp/scripts/lib/jquery-1.7.1.min.js
+END
