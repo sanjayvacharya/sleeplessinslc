@@ -1,0 +1,15 @@
+package products;
+
+option java_package = "com.welflex.products.proto.dto";
+option java_outer_classname= "ProductProtos";
+option optimize_for = SPEED;
+
+message Product {
+   required int32 id = 1;
+   required string name = 2;
+   required string description = 3;   
+}
+
+message ProductList {
+   repeated Product productDto = 1;   
+}

@@ -1,0 +1,167 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    	http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>com.welflex.example</groupId>
+		<artifactId>binaryprotocols-project</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.welflex.example</groupId>
+	<artifactId>integration-test</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Integration Test</name>
+
+
+	<description>
+		Integration Test between clients and webapp.
+	</description>
+
+	<dependencies>
+		<dependency>
+		  <groupId>com.welflex.example</groupId>
+		  <artifactId>common</artifactId>
+		  <version>1.0-SNAPSHOT</version>
+		</dependency>
+        
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+
+		<!--  Define version of Client. It is a depenedency -->
+		<dependency>
+			<groupId>com.welflex.example</groupId>
+			<artifactId>client</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		
+		
+		<!--  Define version of installed Webapp-->
+		<dependency>
+			<groupId>com.welflex.example</groupId>
+			<artifactId>webapp</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>testCompile</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.4.2</version>
+
+				<configuration>
+					<excludes>
+						<exclude>**/*IntegrationTest.java</exclude>
+					</excludes>
+				</configuration>
+
+				<!--  Dont run integration test in Test(s) phase -->
+				<executions>
+					<execution>
+						<id>integration-tests</id>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<skip>false</skip>
+							<excludes>
+								<exclude>none</exclude>
+							</excludes>
+							<includes>
+								<include>
+									**/*IntegrationTest.java
+								</include>
+							</includes>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.cargo</groupId>
+				<artifactId>cargo-maven2-plugin</artifactId>
+				<version>0.3</version>
+				<configuration>
+					<wait>false</wait>
+					<container>
+						<containerId>jetty6x</containerId>
+						<type>embedded</type>
+						<systemProperties>
+							<org.apache.commons.logging.Log>
+								org.apache.commons.logging.impl.SimpleLog
+							</org.apache.commons.logging.Log>
+						</systemProperties>
+
+					</container>
+					<configuration>
+						<properties>
+							<cargo.servlet.port>
+								8080
+							</cargo.servlet.port>
+						</properties>
+						<deployables>
+							<deployable>
+								<groupId>com.welflex.example</groupId>
+								<artifactId>
+									webapp
+								</artifactId>
+								<type>war</type>
+								<properties>
+									<context>IntegrationTest</context>
+								</properties>
+								<pingURL>
+									http://localhost:8080/IntegrationTest
+								</pingURL>
+							</deployable>
+						</deployables>
+					</configuration>
+				</configuration>
+				<executions>
+					<execution>
+						<id>start-container</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>stop-container</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+
+	<properties>
+		<cargo.container>jetty6.x</cargo.container>
+	</properties>
+
+</project>

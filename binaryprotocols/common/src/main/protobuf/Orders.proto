@@ -1,0 +1,17 @@
+package orders;
+
+option java_package = "com.welflex.orders.proto.dto";
+option java_outer_classname= "OrderProtos";
+option optimize_for = SPEED;
+
+message LineItem {
+ optional int64 id =1;
+ required int64 itemId = 2;
+ required string itemName = 3;
+ required int32 quantity = 4;
+}
+
+message Order {
+   optional int64 id = 1;
+   repeated LineItem lineItems = 2;   
+}
