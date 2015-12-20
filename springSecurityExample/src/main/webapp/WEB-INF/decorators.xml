@@ -1,0 +1,10 @@
+<decorators defaultdir="/decorators">
+    <decorator name="default" page="default.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    
+    <decorator name="headerFooter" page="headerFooter.jsp">
+    	<pattern>/login.html</pattern>
+    	<pattern>/logoutSuccess.html</pattern>
+    </decorator>
+</decorators>

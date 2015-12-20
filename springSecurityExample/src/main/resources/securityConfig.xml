@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+
+	<ldap-server root="o=welflex" ldif="classpath:flightcontrol.ldiff" />
+
+	<ldap-user-service id="ldapUserService"
+		user-search-filter="uid={0}" user-search-base="ou=users"
+		group-search-filter="(uniqueMember={0})" group-search-base="ou=groups"
+		group-role-attribute="cn" role-prefix="ROLE_" />
+
+
+	<authentication-manager>
+		<authentication-provider>
+			<ldap-user-service user-search-filter="uid={0}"
+				user-search-base="ou=users" group-search-filter="(uniqueMember={0})"
+				group-search-base="ou=groups" group-role-attribute="cn" role-prefix="ROLE_"/>
+		</authentication-provider>
+	</authentication-manager>
+
+	<http auto-config="true" create-session="stateless">
+
+		<intercept-url pattern="/login*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/logoutSuccess*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/scripts*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/styles*" access="IS_AUTHENTICATED_ANONYMOUSLY" />
+
+		<intercept-url pattern="/*" access="ROLE_USER" />
+
+		<form-login login-page="/login.html"
+			always-use-default-target="true" default-target-url="/home.html"
+			authentication-failure-url="/login.html?login_error=1" />
+		<logout logout-url="/logout" logout-success-url="/logoutSuccess.html" />
+	</http>
+
+</beans:beans>
