@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE cache-config SYSTEM "cache-config.dtd">
+
+<cache-config>
+
+  <caching-scheme-mapping>
+    <cache-mapping>
+      <cache-name>IdCache</cache-name>
+      <scheme-name>IdCache</scheme-name>
+    </cache-mapping>
+  </caching-scheme-mapping>
+
+  <caching-schemes>
+    <distributed-scheme>
+      <scheme-name>IdCache</scheme-name>
+      <backing-map-scheme>
+        <read-write-backing-map-scheme>
+          <internal-cache-scheme>
+            <local-scheme>
+              <high-units system-property="idCache.high-units"/>
+              <expiry-delay system-property="idCache.expiry-delay"/>
+            </local-scheme>
+          </internal-cache-scheme>
+        </read-write-backing-map-scheme>
+      </backing-map-scheme>
+      <thread-count>5</thread-count>
+      <autostart>true</autostart>
+    </distributed-scheme>
+  </caching-schemes>
+
+</cache-config>
