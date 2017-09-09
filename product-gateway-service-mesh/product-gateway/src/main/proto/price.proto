@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package="com.welflex.price.generated";
+option java_outer_classname="PriceProto";
+
+package price;
+
+service PriceService {
+  rpc get(PriceRequest) returns (PriceResponse) {}
+}
+
+message PriceRequest {
+  int32 productId = 1;
+}
+
+message ProductPrice {
+  int32 productId = 1;
+  double price = 2;
+}
+
+message PriceResponse {
+  ProductPrice productPrice = 1;
+}

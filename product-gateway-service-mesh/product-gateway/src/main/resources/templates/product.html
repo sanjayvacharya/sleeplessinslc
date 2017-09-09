@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Product</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<link rel="stylesheet" type="text/css"
+	href="/webjars/bootstrap/css/bootstrap.min.css" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"
+	rel="stylesheet" media="screen" />
+
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap-theme.min.css}"
+	rel="stylesheet" media="screen" />
+
+</head>
+<body>
+	<nav class="navbar navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Acme Shopping</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container">
+
+		<h1 th:text="${product.description}">Product Description</h1>
+		<div class="row">
+			<div class="col-sm-6">
+				<img width="300" height="220" th:src="${product.imageUrl}" />
+			</div>
+			<div class="col-sm-6">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Option</th>
+							<th>Price</th>
+							<th>In Stock?</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="prod : ${product.options}">
+							<td th:text="${prod.optionDescription}">?</td>
+							<td th:text="${prod.price}">?</td>
+							<td th:text="${prod.inStock}? Yes : No">?</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Review</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="review : ${product.reviews}">
+					<td th:text="${review}">?</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

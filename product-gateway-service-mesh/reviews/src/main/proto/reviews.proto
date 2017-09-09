@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package="com.welflex.reviews.generated";
+option java_outer_classname="ReviewsProto";
+
+package reviews;
+
+service ReviewsService {
+  rpc get(ReviewsRequest) returns (ReviewsResponse) {}
+}
+
+message ReviewsRequest {
+  int32 productId = 1;
+}
+
+message ReviewsResponse {
+  repeated ProductReview review = 1;
+}
+
+message ProductReview {
+  int32 productId = 1;
+  string review = 2;
+}

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package="com.welflex.inventory.generated";
+option java_outer_classname="InventoryProto";
+
+package inventory;
+
+service InventoryService {
+  rpc get(InventoryRequest) returns (InventoryResponse) {}
+}
+
+message InventoryRequest {
+  int32 productId = 1;
+}
+
+message ProductInventory {
+  int32 productId = 1;
+  int32 count = 2;
+}
+
+message InventoryResponse {
+  ProductInventory productInventory = 1;
+}

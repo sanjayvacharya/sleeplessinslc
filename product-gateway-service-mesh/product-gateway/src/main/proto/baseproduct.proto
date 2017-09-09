@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package="com.welflex.baseproduct.generated";
+option java_outer_classname="BaseProductProto";
+
+package baseproduct;
+
+service BaseProductService {
+  rpc getBaseProduct(BaseProductRequest) returns (BaseProductResponse) {}
+}
+
+message BaseProductRequest {
+  int32 productId = 1;
+}
+
+message BaseProductResponse {
+  BaseProduct baseProduct = 1;
+}
+
+message BaseProduct {
+  BaseProductCore baseProductCore = 1;
+  repeated BaseProductOption options = 2;
+}
+
+message BaseProductCore {
+  int32 productId = 1;
+  string description = 2;
+  string imageUrl = 3;
+}
+
+message BaseProductOption {
+  int32 productId = 1;
+  string optionDescription = 2;
+}

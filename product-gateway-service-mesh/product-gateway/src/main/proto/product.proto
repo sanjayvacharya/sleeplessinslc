@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option java_multiple_files=true;
+option java_package="com.welflex.product.generated";
+option java_outer_classname="ProductProto";
+
+import "baseproduct.proto";
+import "inventory.proto";
+import "price.proto";
+import "reviews.proto";
+
+
+package product;
+
+service ProductService {
+  rpc get(ProductRequest) returns (ProductResponse) {}
+}
+
+message ProductRequest {
+  int32 productId = 1;
+}
+
+message ProductResponse {
+  Product product = 1;
+}
+
+message Product {
+  baseproduct.BaseProductCore info = 1;
+  price.ProductPrice productPrice = 2;
+  repeated ProductOption options = 3;
+  repeated reviews.ProductReview reviews = 4;
+}
+
+message ProductOption {
+  baseproduct.BaseProductOption baseProductOption = 1;
+  price.ProductPrice productPrice = 2;
+  inventory.ProductInventory productInventory = 3;
+}
