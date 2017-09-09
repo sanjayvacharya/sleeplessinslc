@@ -3,7 +3,7 @@
 This project is used to demonstrate Istio and Linkerd service meshes with GRPC and Spring Boot services.
 
 The documentation behind this blog is available at:
-https://sleeplessinslc.blogspot.com
+https://sleeplessinslc.blogspot.com/2017/09/service-mesh-examples-of-istio-and.html
 
 ## Points of Note
 
@@ -12,7 +12,7 @@ https://sleeplessinslc.blogspot.com
 - Composition of protocol buffer schemas
 - Creation of Docker images for the Microservices
 - Product Gateway exposes a HTML and JSON representation
-- The application only supports one Product at the resource /product/9310301
+- The application only supports ONE Product at the resource /product/9310301
 - The applications only support happy path!
 
 ## Structure of Project
@@ -34,4 +34,4 @@ mvn clean install
 ```
 # Running in Kubernetes
 
-Follow the instructions on http://sleeplessinslc.blogspot.com for details
+Follow the instructions at https://sleeplessinslc.blogspot.com/2017/09/service-mesh-examples-of-istio-and.html for more details
