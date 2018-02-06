@@ -1,0 +1,10 @@
+[
+{"namespace": "io.welflex.examples.inventory",
+ "type": "record",
+ "name": "LocationSku",
+ "fields": [
+     {"name": "location", "type": "string"},
+     {"name": "sku", "type": "string"}
+  ]
+}
+]

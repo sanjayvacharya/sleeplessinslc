@@ -1,0 +1,150 @@
+---
+version: '2'
+services:
+  cassandra:
+      container_name: cassandra
+      image: cassandra:latest
+      ports:
+        - "7000:7000"
+        - "7001:7001"
+        - "9160:9160"
+        - "9042:9042"
+        - "7199:7199"
+
+  zk1:
+    image: confluentinc/cp-zookeeper
+    ports: 
+      - "22181:22181"
+    environment:
+      ZOOKEEPER_SERVER_ID: 1
+      ZOOKEEPER_CLIENT_PORT: 22181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: zk1:22888:23888;zk2:32888:33888;zk3:42888:43888
+
+  zk2:
+    image: confluentinc/cp-zookeeper
+    ports:
+      - "32181:32181"
+    environment:
+      ZOOKEEPER_SERVER_ID: 2
+      ZOOKEEPER_CLIENT_PORT: 32181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: zk1:22888:23888;zk2:32888:33888;zk3:42888:43888
+
+  zk3:
+    image: confluentinc/cp-zookeeper
+    ports: 
+      - "42181:42181"
+    environment:
+      ZOOKEEPER_SERVER_ID: 3
+      ZOOKEEPER_CLIENT_PORT: 42181
+      ZOOKEEPER_TICK_TIME: 2000
+      ZOOKEEPER_INIT_LIMIT: 5
+      ZOOKEEPER_SYNC_LIMIT: 2
+      ZOOKEEPER_SERVERS: zk1:22888:23888;zk2:32888:33888;zk3:42888:43888
+
+  kafka-1:
+    image: confluentinc/cp-kafka
+    ports:
+      - "19092:19092"
+    depends_on:
+      - zk1
+      - zk2
+      - zk3
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: ${DOCKER_KAFKA_HOST}:22181,${DOCKER_KAFKA_HOST}:32181,${DOCKER_KAFKA_HOST}:42181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${DOCKER_KAFKA_HOST}:19092
+
+  kafka-2:
+    image: confluentinc/cp-kafka
+    ports:
+      - "29092:29092"
+    depends_on:
+      - zk1
+      - zk2
+      - zk3
+    environment:
+      KAFKA_BROKER_ID: 2
+      KAFKA_ZOOKEEPER_CONNECT: ${DOCKER_KAFKA_HOST}:22181,${DOCKER_KAFKA_HOST}:32181,${DOCKER_KAFKA_HOST}:42181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${DOCKER_KAFKA_HOST}:29092
+
+  kafka-3:
+    image: confluentinc/cp-kafka
+    ports: 
+      - "39092:39092"
+    depends_on:
+      - zk1
+      - zk2
+      - zk3
+    environment:
+      KAFKA_BROKER_ID: 3
+      KAFKA_ZOOKEEPER_CONNECT: ${DOCKER_KAFKA_HOST}:22181,${DOCKER_KAFKA_HOST}:32181,${DOCKER_KAFKA_HOST}:42181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${DOCKER_KAFKA_HOST}:39092
+
+  schema-registry:
+    image: confluentinc/cp-schema-registry
+    depends_on:
+      - zk1
+    ports:
+      - "8081:8081"
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema_registry
+      SCHEMA_REGISTRY_KAFKASTORE_CONNECTION_URL: 'zk1:22181'
+    restart: unless-stopped
+ 
+  inventory-mutator:
+    image: docker/inventory-mutator
+    depends_on:
+      - schema-registry
+    ports:
+      - "9091:9091"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS :  '${DOCKER_KAFKA_HOST}:19092,${DOCKER_KAFKA_HOST}:29092,${DOCKER_KAFKA_HOST}:39092'
+      SCHEMA_REGISTRY_URL: 'http://${DOCKER_KAFKA_HOST}:8081'
+ 
+ 
+  sellable-inventory-service:
+    image: docker/sellable-inventory-service
+    depends_on:
+      - schema-registry
+      - cassandra
+    ports:
+      - "9093:9093"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS :  '${DOCKER_KAFKA_HOST}:19092,${DOCKER_KAFKA_HOST}:29092,${DOCKER_KAFKA_HOST}:39092'
+      SCHEMA_REGISTRY_URL: 'http://${DOCKER_KAFKA_HOST}:8081'
+      SERVER_PORT: 9093
+      SPRING_DATA_CASSANDRA_CONTACT-POINTS: cassandra
+    restart: unless-stopped
+  
+  sellable-inventory-calculator-1:
+    image: docker/sellable-inventory-calculator
+    depends_on:
+      - schema-registry
+      - sellable-inventory-service
+      - inventory-mutator
+    ports:
+      - "9094:9094"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS :  '${DOCKER_KAFKA_HOST}:19092,${DOCKER_KAFKA_HOST}:29092,${DOCKER_KAFKA_HOST}:39092'
+      SCHEMA_REGISTRY_URL: 'http://${DOCKER_KAFKA_HOST}:8081'
+      SERVER_HOST: sellable-inventory-calculator-1
+  
+  sellable-inventory-calculator-2:
+    image: docker/sellable-inventory-calculator
+    depends_on:
+      - schema-registry
+      - sellable-inventory-service
+      - inventory-mutator
+    ports:
+      - "9095:9095"
+    environment:
+      SPRING_KAFKA_BOOTSTRAP_SERVERS :  '${DOCKER_KAFKA_HOST}:19092,${DOCKER_KAFKA_HOST}:29092,${DOCKER_KAFKA_HOST}:39092'
+      SCHEMA_REGISTRY_URL: 'http://${DOCKER_KAFKA_HOST}:8081'
+      SERVER_HOST: sellable-inventory-calculator-2
+      SERVER_PORT: 9095
