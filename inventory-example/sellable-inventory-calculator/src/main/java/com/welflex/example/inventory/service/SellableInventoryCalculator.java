@@ -66,8 +66,7 @@ public class SellableInventoryCalculator implements SellableInventoryService {
     KTable<LocationSku, Integer> sellableInventory = adjustments.leftJoin(inventoryReservations,
         (adjustment, reservation) -> {
           LOGGER.info("Adjustment:{} Reservation {}", adjustment, reservation);
-          return (adjustment == null) ? (reservation != null ? (-reservation) : 0)
-              : (adjustment - (reservation == null ? 0 : reservation));
+          return (adjustment - (reservation == null ? 0 : reservation));
         }, Materialized.<LocationSku, Integer>as(Stores.persistentKeyValueStore(SELLABLE_INVENTORY_STORE))
             .withKeySerde(Topics.SELLABLE_INVENTORY.keySerde()).withValueSerde(Topics.SELLABLE_INVENTORY.valueSerde()));
 
