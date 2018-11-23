@@ -1,0 +1,248 @@
+openapi: "3.0.0"
+info: 
+   version: '1.0'
+   title: Notes Service
+   description: Demo project of open api 3 using API first development
+   termsOfService: http://localhost:8080/terms-of-service
+   contact:
+    name: Sanjay Acharya
+    email: foo@bar.com
+   
+
+security:
+  - BasicAuth: []
+  
+paths:
+   /notes:
+      get:
+         summary: Get all notes
+         operationId: getNotes
+         tags:
+            - notes
+         parameters:
+            - name: page
+              in: query
+              description: Page Number
+              required: false
+              schema:
+                 type: integer
+                 format: int32
+            - name: page-size
+              in: query
+              description: Number of items to return at one time
+              required: false
+              schema: 
+                 type: integer
+                 format: int32
+         responses:
+            '200':
+              description: A paged array of notes
+              headers: 
+                x-next: 
+                  description: A link to the next pages of responses
+                  schema: 
+                     type: string
+              content:
+                application/json: 
+                  schema:
+                    $ref: "#/components/schemas/NotesPage"
+            '404': 
+              $ref: "#/components/responses/NotFound"
+                                      
+            default:
+              $ref: "#/components/responses/UnexpectedError"              
+          
+      post:
+         summary: Creates a new note
+         operationId: createNote
+         tags:
+            - notes
+         requestBody:
+          description: The note contents
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Note"
+         responses:
+          '201':
+            description: A simple string response
+            content:  
+               application/json:
+                 schema:
+                   $ref: "#/components/schemas/Note"                                            
+            headers:
+              Location: 
+                schema: 
+                  type: string
+                  format : url
+                  description: Location of the created Note Resource
+          default :
+            $ref: "#/components/responses/UnexpectedError"
+                
+   /notes/{id}:
+    get:
+      summary: Gets a Note
+      operationId: getNote
+      tags:
+        - notes
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the note to retrieve
+          schema:
+            type: integer
+      responses:
+        '200': 
+          description: The note requested
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Note"
+        
+        '404':
+          $ref: "#/components/responses/NotFound"          
+                       
+        default: 
+          $ref: "#/components/responses/UnexpectedError"          
+              
+    put:
+      summary: Update a note
+      operationId: updateNote
+      tags: 
+        - notes
+      requestBody:
+        description: Note to update
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Note"
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Id of the note to update
+          schema: 
+            type: integer
+      responses:
+        '200':
+          description: Note Detail
+        default: 
+          $ref: "#/components/responses/UnexpectedError"            
+          
+    delete:
+      summary: Delete a note
+      operationId: deleteNote
+      tags:
+       - notes
+      parameters:
+         - name: id
+           in: path
+           required: true
+           description : Id of the note delete
+           schema:
+              type: integer
+      responses: 
+         '204': 
+            description : Note deleted         
+         default: 
+            $ref: "#/components/responses/UnexpectedError"  
+      
+components:
+ 
+  responses:
+    NotFound:
+      description: The specified resource was not found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+            
+    Unauthorized:
+      description: Unauthorized
+      headers:
+        WWW_Authenticate:
+          schema:
+            type: string
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+            
+            
+    UnexpectedError:
+      description: Unexpected Error
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'            
+    
+  securitySchemes:
+    BasicAuth:
+      scheme: basic
+      type: http
+      
+  schemas:
+    Note:
+      type:
+        object
+      required:      
+        - content
+      properties:
+        noteId:
+          type: integer
+        content:
+          type: string
+    
+    NotesPage:
+      type:
+        object 
+      required:
+        - metadata
+        - items
+      properties:
+        metadata:
+          $ref: "#/components/schemas/PageMetadata"
+        items:
+          $ref: "#/components/schemas/Notes"
+          
+    Notes:
+      type: array
+      items:
+        $ref: "#/components/schemas/Note"
+    
+    Error:
+      type:
+        object
+      properties:
+        message:
+          type: string
+   
+    PageMetadata:
+      type:
+        object
+      required: 
+        - pageNumber
+        - pageSize
+        - resultCount
+        - totalResults
+      properties:
+        pageNumber:
+          type: integer
+          format: int32
+        
+        pageSize:
+          type: integer
+          format: int32
+      
+        resultCount:
+          type: integer
+          format: int32
+        
+        totalResults:
+          type: integer
+          format: int64
+                 
+    
