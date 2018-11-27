@@ -30,7 +30,7 @@
         
         <executions>
           <execution>
-            <id>server</id>
+            <id>client</id>
             <goals>
               <goal>generate</goal>
             </goals>
