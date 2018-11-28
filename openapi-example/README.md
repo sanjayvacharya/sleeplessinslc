@@ -22,3 +22,9 @@ mvn install
 ```
 
 The above should result in the service and client stubs getting generated and the integration running.
+
+If you start up the service indepedently you can access the REST endpoints and also access the API definition from the service at: http://localhost:8080/api.yaml
+
+You can access Swagger tools to view and play with the application at: http://localhost:8080/swagger-ui.html
+
+For the blog that accompanies this code sample, take a look at: https://sleeplessinslc.blogspot.com/2018/11/api-first-services-with-open-api-30-and.html
