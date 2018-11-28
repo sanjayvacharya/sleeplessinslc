@@ -37,11 +37,6 @@ paths:
          responses:
             '200':
               description: A paged array of notes
-              headers: 
-                x-next: 
-                  description: A link to the next pages of responses
-                  schema: 
-                     type: string
               content:
                 application/json: 
                   schema:
