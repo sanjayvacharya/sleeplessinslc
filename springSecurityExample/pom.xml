@@ -327,7 +327,7 @@
 	</build>
 
 	<properties>
-		<springFramework.version>5.2.1.RELEASE</springFramework.version>
+		<springFramework.version>5.3.18</springFramework.version>
 		<log4j.version>1.2.14</log4j.version>
 	</properties>
 </project>
