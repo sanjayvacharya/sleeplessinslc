@@ -13,7 +13,7 @@
     <commons-lang.version>2.5</commons-lang.version>
     <junit-dep.version>4.10</junit-dep.version>
     <log4j.version>1.2.14</log4j.version>
-    <springFramework.version>5.2.1.RELEASE</springFramework.version>
+    <springFramework.version>5.3.19</springFramework.version>
     <guava.version>10.0.1</guava.version>
     <pojomatic.version>1.0</pojomatic.version>
     <jersey.version>2.17</jersey.version>
