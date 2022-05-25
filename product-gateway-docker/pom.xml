@@ -15,7 +15,7 @@
     <log4j.version>1.2.14</log4j.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <springCloudNetflix.version>1.0.3.RELEASE</springCloudNetflix.version>
-    <springFramework.version>5.2.1.RELEASE</springFramework.version>
+    <springFramework.version>5.2.22.RELEASE</springFramework.version>
     <guava.version>18.0</guava.version>
     <pojomatic.version>1.0</pojomatic.version>
     <jersey.version>2.17</jersey.version>
