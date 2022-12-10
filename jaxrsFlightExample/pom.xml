@@ -383,7 +383,7 @@
 
 	<properties>
 		<pmd.version>2.5</pmd.version>
-		<springFramework.version>5.2.1.RELEASE</springFramework.version>
+		<springFramework.version>6.0.0</springFramework.version>
 		<googleCollectionsVersion>1.0</googleCollectionsVersion>
 		<jersey-version>1.9.1</jersey-version>
 		<log4j.version>1.2.14</log4j.version>
